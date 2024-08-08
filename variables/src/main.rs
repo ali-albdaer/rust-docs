@@ -50,10 +50,4 @@ fn main() {
 
     let _a = [0; 5];  // [0, 0, 0, 0, 0]
 
-    another_function();
-
-}
-
-fn another_function() {
-    println!("Another function.");
 }
