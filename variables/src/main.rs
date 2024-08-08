@@ -42,5 +42,18 @@ fn main() {
 
     tup2.2 = 2;
 
+    let arr: [i32; 5] = [1, 2, 3, 4, 5];
 
+    let first = arr[0];
+
+    print!("The value of first is: {first}");
+
+    let _a = [0; 5];  // [0, 0, 0, 0, 0]
+
+    another_function();
+
+}
+
+fn another_function() {
+    println!("Another function.");
 }
