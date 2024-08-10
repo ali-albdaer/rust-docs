@@ -1,5 +1,5 @@
 fn main() {
-    let a = Box::new([0; 1_000_000]);  // Owner of the heap memory at frame 1.
+    let a = Box::new([0; 1_000]);  // Owner of the heap memory at frame 1.
     let b = a;  // Transfer the ownership of the heap memory from a to b. Frame 2.
 
     println!("{}", b[0]);  // Access the heap memory through b. Frame 3.
@@ -8,7 +8,7 @@ fn main() {
     let first = String::from("Ferris"); //1
     let full = add_suffix(first); //4
     // println!("{first}"); Error: value borrowed here after move.
-    println!("{full}");
+    println!("{full}");    
 }
 
 fn add_suffix(mut name: String) -> String {
