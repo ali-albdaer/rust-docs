@@ -1,6 +1,7 @@
 fn main() {
     let first = String::from("Ferris"); //1
     let full = add_suffix(first); //4
+    // println!("{first}"); Error: value borrowed here after move.
     println!("{full}");
 }
 
@@ -13,5 +14,5 @@ fn add_suffix(mut name: String) -> String {
 // Frame 1: Stack: [main] {first*} -> Heap [Ferris]
 // Frame 2: Stack: [main] {first} [add_suffix] {name*} -> Heap [Ferris]
 // Frame 3: Stack: [main] {first} [add_suffix] {name*} -> Heap [Ferris Jr.]
-// Frame 4: Stack: [main] {first*} -> Heap [Ferris Jr.]
+// Frame 4: Stack: [main] {full*} -> Heap [Ferris Jr.]
 // var*: var is the owner of the heap memory.
