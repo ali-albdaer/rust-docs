@@ -3,7 +3,7 @@ fn main() {
     let m2 = String::from("world");  // 1
     greet(&m1, &m2); // lends the strings to greet // 3
     let s = format!("{} {}", m1, m2);
-    // println!("{}", s);
+    println!("{}", s);
 
     let mut x: Box<i32> = Box::new(1);
     let a: i32 = *x;         // *x reads the heap value, so a = 1
@@ -21,7 +21,7 @@ fn main() {
 
 fn greet(g1: &String, g2: &String) { // burrows the strings
     // 2
-    //println!("{} {}!", g1, g2);
+    println!("{} {}!", g1, g2);
 }
 
 
