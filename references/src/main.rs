@@ -30,3 +30,11 @@ fn greet(g1: &String, g2: &String) { // burrows the strings
 // Frame 3: Stack: [main] {m1*, m2*} -> Heap [Hello, world]
 // var*: var is the owner of the heap memory.
 // var+: var is borrowing the heap memory.
+
+
+/* Notes:
+- Refrences cannot live longer than the values they refer to.
+- A mutable reference can be borrowed from a mutable value.
+- As long as there is a mutable reference to a value, there can be no other references to that value. (mutable or immutable)
+- Dereferencing a reference is done with the * operator. ('unboxing' might make more sense in some situations)
+*/
