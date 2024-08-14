@@ -1,7 +1,8 @@
 fn main() {
+    // String Slices
     let s = "Hello Rust this is a String Slice (&str).";
     let n: i32 = 2;
-    
+
     let word = nth_word(&s, n);
     let word2 = nth_word_alt(s, n);
 
@@ -9,6 +10,12 @@ fn main() {
 
     println!("(nth_word) Word #{n} is \"{word}\"");
     println!("(nth_word_alt) Word #{n} is \"{word2}\"");
+
+    // Array Slices
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[2..4];
+
+    assert_eq!(slice, &[3, 4]);
 }
 
 fn nth_word(s: &str, n: i32) -> &str {
