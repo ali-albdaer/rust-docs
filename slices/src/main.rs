@@ -25,5 +25,5 @@ fn nth_word(s: &str, n: i32) -> &str {
 
     }
 
-    &s[..]
+    &s[first_index..]
 }
