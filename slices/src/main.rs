@@ -1,10 +1,14 @@
 fn main() {
     let s = "Hello Rust this is a String Slice (&str).";
     let n: i32 = 2;
-    let word = nth_word(&s, n);  // Could reference n as well
+    
+    let word = nth_word(&s, n);
+    let word2 = nth_word_alt(s, n);
 
     println!("{s}");
-    println!("Word #{n} is \"{word}\"");
+
+    println!("(nth_word) Word #{n} is \"{word}\"");
+    println!("(nth_word_alt) Word #{n} is \"{word2}\"");
 }
 
 fn nth_word(s: &str, n: i32) -> &str {
@@ -26,4 +30,24 @@ fn nth_word(s: &str, n: i32) -> &str {
     }
 
     &s[first_index..]
+}
+
+
+// Direcyly iterarte over the characters
+fn nth_word_alt(s: &str, n: i32) -> &str {
+    let mut word_count = 0;
+    let mut first_index = 0;
+
+    for (i, c) in s.char_indices() {  // Iterate over characters and their indices
+        if c == ' ' {
+            if word_count < n - 1 {
+                word_count += 1;
+                first_index = i + 1;
+                continue;
+            }
+            return &s[first_index..i];
+        }
+    }
+
+    &s[first_index..] // Return the last word if the loop completes without returning
 }
