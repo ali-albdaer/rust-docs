@@ -1,7 +1,7 @@
 fn main() {
     let s = "Hello Rust this is a String Slice (&str).";
     let n: i32 = 2;
-    let word = nth_word(&s, n);
+    let word = nth_word(&s, n);  // Could reference n as well
 
     println!("{s}");
     println!("Word #{n} is \"{word}\"");
