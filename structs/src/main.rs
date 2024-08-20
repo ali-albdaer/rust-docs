@@ -41,6 +41,20 @@ fn main() {
 
     println!("black: ({}, {}, {})", black.0, black.1, black.2);
     println!("origin: ({}, {}, {})", x, y, z);
+
+    // unit-like struct:
+    let _unit_like = UnitLikeStruct;  // _ to avoid warning about unused variable
+
+    // burrowed fields:
+    let email = &alice.email;
+
+    // other fields won't lose ownership:
+    alice.sign_in_count += 1; 
+
+    // but the burrowed field loses ownership, and so does the struct itself:
+    // println!("alice email: {}", alice.email);  // error: value borrowed here after move
+
+    println!("alice email: {}", email);
 }
 
 struct User {
@@ -68,8 +82,14 @@ fn build_user(email: String, username: String) -> User {
         sign_in_count: 1,
     }
 }
-*/
 
+*/
 // tuple struct:
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
+
+
+// unit-like struct:
+struct UnitLikeStruct;
+
+// NOTE: Struct fields can be references, but they need to have a lifetime specifier. We do that later ig.
