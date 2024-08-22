@@ -20,6 +20,7 @@ fn main() {
     println!("alice_alt email: {}", alice_alt.email);
 
     /* struct update syntax:
+    // this copies all fields from alice to alice_alt, except for email
     let alice_alt = User {
         email: String::from("alice2@example.com");
         ..alice
