@@ -12,6 +12,13 @@ impl Rectangle {
     fn fits(&self, other: &Rectangle) -> bool {
         self.width >= other.width && self.height >= other.height
     }
+
+    fn square(side_length: u32) -> Self {
+        Self {
+            width: side_length,
+            height: side_length
+        }
+    }  // Not a method!
 }
 
 fn main () {
@@ -34,5 +41,8 @@ fn main () {
     println!("Area of rect1: {}", rect1.area());
 
     println!("Rect2: {:?}", rect2);  // :#? for pretty-print.
-    dbg!(&rect2);  // A reference is used because dbg! takes ownership. 
+    dbg!(&rect2);  // A reference is used because dbg! takes ownership.
+
+    let square1: Rectangle = Rectangle::square(20);
+    println!("Square area: {}", square1.area());
 }
