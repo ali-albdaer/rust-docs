@@ -64,6 +64,6 @@ fn main() {
     };
 
     println!("Initial Dimensions: {:#?}", rect3);
-    rect3.scale_by(3); // == Rectangle::scale_by(&rect3, 3)
+    rect3.scale_by(3); // == Rectangle::scale_by(&mut rect3, 3)
     println!("After scaling: {:#?}", rect3);
 }
