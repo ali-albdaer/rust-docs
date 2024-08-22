@@ -4,6 +4,10 @@ struct Rectangle {
 }
 
 impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+
     fn fits(&self, other: &Rectangle) -> bool {
         if self.width >= other.width && self.height >= other.height {
             true
@@ -27,5 +31,7 @@ fn main () {
     let one_in_two: bool = rect2.fits(&rect1);
     let two_in_one: bool = rect1.fits(&rect2);
 
-    print!("One in two: {}\nTwo in one: {}", one_in_two, two_in_one);
+    println!("One in two: {}\nTwo in one: {}", one_in_two, two_in_one);
+    println!("Are of rect1: {}", rect1.area());
+    println!("Area of rect2: {}", rect2.area());
 }
