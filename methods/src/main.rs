@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32
@@ -19,8 +20,10 @@ fn main () {
         height: 50
     };
 
+    let scale: u32 = 2;
+
     let rect2: Rectangle = Rectangle {
-        width: 20,
+        width: dbg!(10 * scale),
         height: 40
     };
 
@@ -28,6 +31,6 @@ fn main () {
     let two_in_one: bool = rect1.fits(&rect2);
 
     println!("One in two: {}\nTwo in one: {}", one_in_two, two_in_one);
-    println!("Are of rect1: {}", rect1.area());
-    println!("Area of rect2: {}", rect2.area());
+    println!("Area of rect1: {}", rect1.area());
+    println!("Rect2: {:?}", rect2);  // :#? for pretty-print.
 }
