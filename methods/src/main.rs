@@ -23,7 +23,7 @@ fn main () {
     let scale: u32 = 2;
 
     let rect2: Rectangle = Rectangle {
-        width: dbg!(10 * scale),
+        width: dbg!(10 * scale),  // Takes ownership but returns it.
         height: 40
     };
 
@@ -32,5 +32,7 @@ fn main () {
 
     println!("One in two: {}\nTwo in one: {}", one_in_two, two_in_one);
     println!("Area of rect1: {}", rect1.area());
+
     println!("Rect2: {:?}", rect2);  // :#? for pretty-print.
+    dbg!(&rect2);  // A reference is used because dbg! takes ownership. 
 }
