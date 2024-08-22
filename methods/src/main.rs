@@ -9,11 +9,7 @@ impl Rectangle {
     }
 
     fn fits(&self, other: &Rectangle) -> bool {
-        if self.width >= other.width && self.height >= other.height {
-            true
-        } else {
-            false
-        }
+        self.width >= other.width && self.height >= other.height
     }
 }
 
