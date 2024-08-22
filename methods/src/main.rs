@@ -13,6 +13,11 @@ impl Rectangle {
         self.width >= other.width && self.height >= other.height
     }
 
+    fn scale_by(&mut self, scale: u32) {
+        self.width *= scale;
+        self.height *= scale;
+    }
+
     fn square(side_length: u32) -> Self {
         Self {
             width: side_length,
@@ -45,4 +50,21 @@ fn main () {
 
     let square1: Rectangle = Rectangle::square(20);
     println!("Square area: {}", square1.area());
+
+    // Methods are syntacic sugar for function calls:
+    let area1 = rect1.area();
+    let area2 = Rectangle::area(&rect1);
+    assert_eq!(area1, area2);
+
+    // rect1.scale_by(3);  // rect1 is immutable!
+
+    let mut rect3 = Rectangle {
+        width: 25,
+        height: 35
+    };
+
+    println!("Initial Dimensions: {:#?}", rect3);
+    rect3.scale_by(3);
+    println!("After scaling: {:#?}", rect3);
+
 }
