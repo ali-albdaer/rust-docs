@@ -26,9 +26,9 @@ fn main() {
     std::io::stdin().read_line(&mut leaves).unwrap();
 
     let clover: Result<Clover, String> = Clover::new(leaves.trim().parse().unwrap());
-    match clover {
+    match &clover {
         Ok(_) => println!("Clover!"),
-        Err(ref msg) => println!("{msg}"),  // It is ref because pick is using clover later.
+        Err(msg) => println!("{msg}"),  // `ref msg => ...` instead of `match &clover {...}` also works
     }
 
     pick(clover.unwrap());
