@@ -14,11 +14,21 @@ impl Clover {
     }
 }
 
-fn pick(clover: Clover) {
+fn pick(clover: &Clover) {
     match clover {
         Clover::ThreeLeaf => println!("3 Leaves."),
         Clover::FourLeaf => println!("You are lucky!!"),
     };
+
+    // if let alternative:
+    /*
+    if let Clover::ThreeLeaf = clover {
+        println!("3 Leaves.");
+    } else {
+        println!("You are lucky!!");
+    }
+    */
+    // Practically, should only be used for 1 match or None. (example above is bad.)
 }
 
 fn main() {
@@ -31,5 +41,5 @@ fn main() {
         Err(msg) => println!("{msg}"),  // `ref msg => ...` instead of `match &clover {...}` also works
     }
 
-    pick(clover.unwrap());
+    pick(&clover.unwrap());
 }
