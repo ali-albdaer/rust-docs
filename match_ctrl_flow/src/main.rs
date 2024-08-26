@@ -11,7 +11,7 @@ impl Clover {
             4 => Ok(Clover::FourLeaf),
             _ => Err(format!("Invalid Leaf Count: {}", leaves)),
         }
-    }   
+    }
 }
 
 fn pick(clover: Clover) {
@@ -22,13 +22,13 @@ fn pick(clover: Clover) {
 }
 
 fn main() {
-    let mut leaves: String = String::new(); 
+    let mut leaves: String = String::new();
     std::io::stdin().read_line(&mut leaves).unwrap();
-    
+
     let clover: Result<Clover, String> = Clover::new(leaves.trim().parse().unwrap());
     match clover {
         Ok(_) => println!("Clover!"),
-        Err(ref msg) => println!("{msg}")
+        Err(ref msg) => println!("{msg}"),  // It is ref because pick is using clover later.
     }
 
     pick(clover.unwrap());
