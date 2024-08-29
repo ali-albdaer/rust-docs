@@ -1,12 +1,12 @@
 # Just learning Rust here...
 
 ## Progress & Milestones
-[X] Hello, world!
-[X] Basics & Cargo
-[X] The Burrow Checker
-[X] Structs & Enums
-[ ] Project #1
-[ ] Crates & Packages
+- [X] Hello, world!
+- [X] Basics & Cargo
+- [X] The Burrow Checker
+- [X] Structs & Enums
+- [ ] Project #1
+- [ ] Crates & Packages
 
 
 ## Main Resources
