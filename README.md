@@ -1,4 +1,5 @@
-# Just learning Rust here...
+# Rust
+Just learning rust here...
 
 ## Progress & Milestones
 - [X] Hello, world!
@@ -7,7 +8,7 @@
 - [X] Structs & Enums
 - [ ] Project #1
 - [ ] Crates & Packages
-
+- [ ] ...
 
 ## Main Resources
 - [The Rust Programming Language](https://rust-book.cs.brown.edu/)
