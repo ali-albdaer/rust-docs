@@ -51,7 +51,7 @@ fn main() {
         index += 1;
     }
 
-    // for altermatives
+    // for alternatives
     for number in (1..4).rev() {
         println!("{number}!");
     }
